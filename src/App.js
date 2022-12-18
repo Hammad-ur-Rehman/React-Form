@@ -1,74 +1,82 @@
-import React, { useState } from "react";
-
-
+import React from "react";
+// import Singlestateform from "./Singlestateform";
+// import TodoList from "./TodoList";
+import Counter from './component/Counter';
 function App() {
 
-  const [name, setname] = useState();
-  const [age, setage] = useState('');
-  const [email, setemail] = useState('');
-  const [data, setdata] = useState([])
-
-
-  const add = () => {
-
-
-    if ((name && age && email) === "") {
-
-      alert("Please Field First");
-    }
-                      else {
-                      
-
-      const obj = {
-
-        name: name,//saad
-        age: age,//23
-        email: email//x
-
-      }
-      const a=obj.email;//x
-      const b=data.find(val=>val.email===a)//(val)=>{
-//val.email===a   succes  {}   failure undefined
-      console.log(b)
-      if(b!==undefined){
-        alert(' Already Email exist')
-      }
-      else{
-      setname("");
-      setage("");
-      setemail("");
-      setdata([...data, obj]);
-    }
-  
-} 
-  }
-
-  
-
-  return (
-
+  return(
+    // <Singlestateform/>
+    // <TodoList/>
     <>
-    <div className="container mt-5">
-      <input type="text" placeholder="Enter Name" value={name}  onChange={(e) => setname(e.target.value)}></input>
-      <input type="age" placeholder="Enter Age" value={age}  onChange={(e) => setage(e.target.value)}></input>
-      <input type="email" placeholder="Enter email" value={email}  onChange={(e) =>setemail (e.target.value)}></input>
-      <button onClick={add} className="ml-3">Add</button>
-<table className="table table-striped ">
-  <tbody>
-    {
-      data.map((val,indx)=>
-        <tr key={indx}>
-        <td>{val.name}</td>
-        <td>{val.age}</td>
-        <td>{val.email}</td>
-        </tr>
-      )
-    }
-  </tbody>
-</table>
-</div>
+    <Counter/>
     </>
   )
+//   const [name, setname] = useState();
+//   const [age, setage] = useState('');
+//   const [email, setemail] = useState('');
+//   const [data, setdata] = useState([])
+
+
+//   const add = () => {
+
+
+//     if ((name && age && email) === "") {
+
+//       alert("Please Field First");
+//     }
+//                       else {
+                      
+
+//       const obj = {
+
+//         name: name,//saad
+//         age: age,//23
+//         email: email//x
+
+//       }
+//       const a=obj.email;//x
+//       const b=data.find(val=>val.email===a)//(val)=>{
+// //val.email===a   succes  {}   failure undefined
+//       console.log(b)
+//       if(b!==undefined){
+//         alert(' Already Email exist')
+//       }
+//       else{
+//       setname("");
+//       setage("");
+//       setemail("");
+//       setdata([...data, obj]);
+//     }
+  
+// } 
+//   }
+
+  
+
+//   return (
+
+//     <>
+//     <div className="container mt-5">
+//       <input type="text" placeholder="Enter Name" value={name}  onChange={(e) => setname(e.target.value)}></input>
+//       <input type="age" placeholder="Enter Age" value={age}  onChange={(e) => setage(e.target.value)}></input>
+//       <input type="email" placeholder="Enter email" value={email}  onChange={(e) =>setemail (e.target.value)}></input>
+//       <button onClick={add} className="ml-3">Add</button>
+// <table className="table table-striped ">
+//   <tbody>
+//     {
+//       data.map((val,indx)=>
+//         <tr key={indx}>
+//         <td>{val.name}</td>
+//         <td>{val.age}</td>
+//         <td>{val.email}</td>
+//         </tr>
+//       )
+//     }
+//   </tbody>
+// </table>
+// </div>
+//     </>
+//   )
 }
 
   
